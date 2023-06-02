@@ -4,8 +4,9 @@ const app = express();
 app.use(express.json())
 require("dotenv").config()
 //this app is created by prem chandr adas
+// https://qrcodeps.onrender.com/qrcode?text=<your text or url>
 const PORT=process.env.PORT || 3000
-app.get("/qrcode", (req, res) => {
+app.post("/qrcode", (req, res) => {
     const text = req.query.text || 'Hello, World!';
 
     try {
